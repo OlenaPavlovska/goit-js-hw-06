@@ -7,18 +7,20 @@ const profile = {};
 
 function onSubmit(event) {
     event.preventDefault()
-    console.log(event)
-    console.log(email.value)
-    console.log(password.value)
+  
+const email = event.currentTarget.elements.email;
+const password = event.currentTarget.elements.password;
 
-    if (email.value.trim() === "" || password.value.trim() === "") {
-        alert("Please fill in all the fields!")
+    if (email.value === "" || password.value === "") {
         alert("Please fill in all the fields!")
         }
-        else {
+    else {
+        profile.email = email.value;
+    profile.password = password.value;
         alert('Data send!')
         console.log(profile)
-           loginForm.reset()
-        }
+           
+    }
+     event.currentTarget.reset();
     }
  
